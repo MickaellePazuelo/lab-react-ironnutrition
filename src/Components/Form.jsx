@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class AddFood extends Component {
+
+
+class Form extends React.Component {
 
     state = {
         name: "",
         calories: "",
-        image: ""
+        image: "",
+        calories:"",
       }
 
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+    render() {
+
+        return (
+            
+                <form onSubmit={this.handleFormSubmit}>
+                    <div>
           <label>Name:</label>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
 
@@ -27,11 +29,12 @@ class AddFood extends Component {
 
           <label>Image:</label>
           <input type="image" name="image" src={this.state.image} alt="" onChange={this.handleChange} />
-          <button>Add Food</button>
+          <button Submit>Submit</button>
+          </div>
         </form>
-      </div>
-    );
-  }
+           
+        )
+    }
 }
 
-export default AddFood;
+export default Form
